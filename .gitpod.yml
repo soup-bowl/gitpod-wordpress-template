@@ -1,0 +1,19 @@
+# Use our custom template for PHP & WordPress.
+image:
+  file: .gitpod.Dockerfile
+
+# What ports should be exposed to the user
+# https://www.gitpod.io/docs/config-ports/.
+ports:
+- port: 8080 # NGINX (WordPress, PMA, MailHog UI)
+- port: 1025 # Mailhog
+- port: 3306 # Database
+
+# The tasks to run inside the container.
+# Init    - Run and cached to speed up subsequent Gitpod setups.
+# Command -  Runs each time the pod starts.
+# https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+- name: main
+  init: echo "init"
+  command: echo "outit"
