@@ -4,7 +4,7 @@ USER gitpod
 
 RUN sudo apt-get update \
 	&& sudo apt-get purge -y composer \
-	&& sudo apt-get install -y less nginx
+	&& sudo apt-get install -y less
 
 # Install latest stable Composer.
 RUN sudo curl https://getcomposer.org/download/latest-stable/composer.phar --output /usr/bin/composer \
