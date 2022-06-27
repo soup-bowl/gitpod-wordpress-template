@@ -6,14 +6,17 @@ image:
 # https://www.gitpod.io/docs/config-ports/.
 ports:
 - port: 8080 # NGINX (WordPress, PMA, MailHog UI)
-- port: 1025 # Mailhog
-- port: 3306 # Database
+- port: 8081 # Database (via phpMyAdmin).
+- port: 8082 # Mailhog GUI.
 
 # The tasks to run inside the container.
 # Init    - Run and cached to speed up subsequent Gitpod setups.
 # Command -  Runs each time the pod starts.
 # https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-- name: main
+- name: WordPress Host
   init: echo "init"
   command: echo "outit"
+- name: Compose Helpers
+  init: docker-compose pull
+  command: docker-compose up
