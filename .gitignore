@@ -1,0 +1,6 @@
+wp-*
+#!wp-content
+index.php
+license.txt
+readme.html
+xmlrpc.php
